@@ -4,7 +4,7 @@
 int main (int argc, char *argv[])
 {
 	for (int i = 0; i < 128; i++) {
-		printf("%c : %d\n", i, isdigit(i));
+		printf("%d : %d\n", i, isprint(i));
 	}
 	return 0;
 }

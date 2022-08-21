@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/20 14:03:17 by avapaill          #+#    #+#             */
-/*   Updated: 2022/08/21 12:25:59 by avapaill         ###   ########.fr       */
+/*   Created: 2022/08/21 12:50:49 by avapaill          #+#    #+#             */
+/*   Updated: 2022/08/21 12:55:03 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_islower(int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	return (c >= 'a' && c <= 'z');
-}
+	char	*str;
+	char	*last_character;
 
-int	ft_toupper(int c)
-{
-	if (ft_islower(c))
-		c -= 32;
-	return (c);
+	str = (char *) s;
+	last_character = (void *) 0;
+	while (*str)
+	{
+		if (*str == c)
+			last_character = str;
+		str++;
+	}
 }

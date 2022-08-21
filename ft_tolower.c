@@ -6,15 +6,13 @@
 /*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 16:26:15 by avapaill          #+#    #+#             */
-/*   Updated: 2022/08/20 16:34:02 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/08/21 12:25:27 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 static int	ft_isupper(int c)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	return (0);
+	return (c >= 'A' && c <= 'Z');
 }
 
 int	ft_tolower(int c)
