@@ -6,7 +6,7 @@
 /*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 12:50:49 by avapaill          #+#    #+#             */
-/*   Updated: 2022/08/21 12:55:03 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/08/29 12:07:25 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,7 @@ char	*ft_strrchr(const char *s, int c)
 			last_character = str;
 		str++;
 	}
+	if (*str == c)
+		last_character = str;
+	return (last_character);
 }

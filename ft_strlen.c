@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/20 17:10:07 by avapaill          #+#    #+#             */
-/*   Updated: 2022/08/29 11:49:18 by avapaill         ###   ########.fr       */
+/*   Created: 2022/08/29 12:08:33 by avapaill          #+#    #+#             */
+/*   Updated: 2022/08/29 15:32:47 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
-{
-	char	*str;
+#include <stddef.h>
 
-	str = (char *) s;
-	while (*str)
-	{
-		if (*str == c)
-			return (str);
-		str++;
-	}
-	if (*str == c)
-		return (str);
-	return ((void *) 0);
+size_t	ft_strlen(const char *s)
+{
+	size_t	length;
+
+	length = 0;
+	while (s[length])
+		length++;
+	return (length);
 }
