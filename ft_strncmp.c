@@ -6,25 +6,29 @@
 /*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:39:27 by avapaill          #+#    #+#             */
-/*   Updated: 2022/09/02 16:48:01 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/10/05 02:23:29 by alexvpll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
-	int	diff;
+	int		difference;
 
+	difference = 0;
 	i = 0;
-	diff = 0;
-	while (s1[i] && i < n) {
-		if (s1[i] != s2[i]) {
-			diff = s2[i] - s1[i];
-			break;
+	while (s1[i] && s2[i] && i < n)
+	{
+		if (s1[i] != s2[i])
+		{
+			difference = s1[i] - s2[i];
+			break ;
 		}
 		i++;
 	}
-
+	if (!difference && i < n)
+		difference = s1[i] - s2[i];
+	return (difference);
 }

@@ -6,9 +6,11 @@
 /*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 14:03:17 by avapaill          #+#    #+#             */
-/*   Updated: 2022/08/21 12:25:59 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/10/04 21:12:04 by alexvpll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static int	ft_islower(int c)
 {
