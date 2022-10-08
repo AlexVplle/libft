@@ -6,7 +6,7 @@
 /*   By: alexvpll </var/spool/mail/alexvpll>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:08:02 by alexvpll          #+#    #+#             */
-/*   Updated: 2022/10/04 21:24:12 by alexvpll         ###   ########.fr       */
+/*   Updated: 2022/10/07 13:55:27 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ int		ft_tolower(int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+void	*ft_memset(void *s, int c, size_t n);
+void	ft_bzero(void *s, size_t n);
 
 #endif
