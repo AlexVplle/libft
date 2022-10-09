@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alexvpll </var/spool/mail/alexvpll>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 15:39:27 by avapaill          #+#    #+#             */
-/*   Updated: 2022/10/09 01:58:38 by alexvpll         ###   ########.fr       */
+/*   Created: 2022/10/08 14:42:15 by alexvpll          #+#    #+#             */
+/*   Updated: 2022/10/08 17:53:10 by alexvpll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
-	int		difference;
+	char	*new_dest;
+	char	*new_src;
 
-	difference = 0;
 	i = 0;
-	while (s1[i] && s2[i] && i < n)
+	new_dest = (char *) dest;
+	new_src = (char *) src;
+	while (i < n)
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+		new_dest[i] = (char) new_src[i];
 		i++;
 	}
-	if (!difference && i < n)
-		difference = s1[i] - s2[i];
-	return (difference);
+	return (new_dest);
 }

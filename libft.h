@@ -6,7 +6,7 @@
 /*   By: alexvpll </var/spool/mail/alexvpll>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:08:02 by alexvpll          #+#    #+#             */
-/*   Updated: 2022/10/07 13:55:27 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/10/09 22:23:04 by alexvpll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,11 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memccpy(void *dest, const void *src, int ch, size_t maxSize);
+void *ft_memmove(void *dest, const void *src, size_t n);
+void *ft_memchr(const void *s, int c, size_t n);
+int	ft_memcmp(const void *s1, const void *s2, size_t n);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
 #endif

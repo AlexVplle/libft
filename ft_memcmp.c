@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alexvpll </var/spool/mail/alexvpll>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 15:39:27 by avapaill          #+#    #+#             */
-/*   Updated: 2022/10/09 01:58:38 by alexvpll         ###   ########.fr       */
+/*   Created: 2022/10/09 02:28:45 by alexvpll          #+#    #+#             */
+/*   Updated: 2022/10/09 21:53:51 by alexvpll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-	int		difference;
+	unsigned char	i;
+	unsigned char	*new_s1;
+	unsigned char	*new_s2;
 
-	difference = 0;
 	i = 0;
-	while (s1[i] && s2[i] && i < n)
+	new_s1 = (unsigned char *) s1;
+	new_s2 = (unsigned char *) s2;
+	while (i < n)
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+		if (new_s1[i] != new_s2[i])
+			return (new_s1[i] - new_s2[i]);
 		i++;
 	}
-	if (!difference && i < n)
-		difference = s1[i] - s2[i];
-	return (difference);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 13:40:34 by avapaill          #+#    #+#             */
-/*   Updated: 2022/10/07 13:54:46 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/10/08 13:32:48 by alexvpll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t			i;
-	unsigned char	*new_s;
-
-	i = 0;
-	new_s = (unsigned char *) s;
-	while (i < n)
-	{
-		new_s[i] = 0;
-		i++;
-	}
+	ft_memset(s, 0, n);
 }

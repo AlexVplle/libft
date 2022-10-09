@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alexvpll </var/spool/mail/alexvpll>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 15:39:27 by avapaill          #+#    #+#             */
-/*   Updated: 2022/10/09 01:58:38 by alexvpll         ###   ########.fr       */
+/*   Created: 2022/10/09 21:51:29 by alexvpll          #+#    #+#             */
+/*   Updated: 2022/10/09 22:48:25 by alexvpll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	int		difference;
+	size_t	length;
 
-	difference = 0;
+	length = ft_strlen(src);
 	i = 0;
-	while (s1[i] && s2[i] && i < n)
+	while (i + 1 < size && src[i])
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+		dst[i] = src[i];
 		i++;
 	}
-	if (!difference && i < n)
-		difference = s1[i] - s2[i];
-	return (difference);
+	dst[i] = '\0';
+	return (length);
 }
