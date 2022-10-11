@@ -6,7 +6,7 @@
 /*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:26:19 by avapaill          #+#    #+#             */
-/*   Updated: 2022/10/09 22:49:06 by alexvpll         ###   ########.fr       */
+/*   Updated: 2022/10/11 23:33:04 by alexvpll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int testMemmove();
 int testMemchr();
 int testMemcmp();
 int testStrlcpy();
+int testStrnstr();
+int testAtoi();
 
 int main (int argc, char *argv[])
 {
@@ -35,7 +37,9 @@ int main (int argc, char *argv[])
 	// testMemmove();
 	// testMemchr();
 	// testMemcmp();
-	testStrlcpy();
+	// testStrlcpy();
+	// testStrnstr();
+	testAtoi();
     return 0;
 }
 
@@ -124,9 +128,22 @@ int testStrlcpy()
 	char *d = malloc(length);
 	char *f = malloc(length);
 	c = "coucou";
-	strlcpy(d, c, 2);
-	ft_strlcpy(f, c, 2);
+	// strlcpy(d, c, 0);
+	ft_strlcpy(f, c, 0);
 	printf("%s\n", d);
 	printf("%s\n", f);
 	return 0;
+}
+
+int testStrnstr()
+{
+	printf("%s\n", ft_strnstr("bonjour", "m", 15));
+	// printf("%s\n", strnstr("bonjour", "m", 15));
+	return (0);
+}
+
+int testAtoi()
+{
+	printf("%d\n", ft_atoi(""));
+	return (0);
 }
