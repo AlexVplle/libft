@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexvpll </var/spool/mail/alexvpll>        +#+  +:+       +#+        */
+/*   By: avapaill <avapaill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/04 14:08:02 by alexvpll          #+#    #+#             */
-/*   Updated: 2022/10/11 23:22:11 by alexvpll         ###   ########.fr       */
+/*   Created: 2022/10/13 23:02:21 by avapaill          #+#    #+#             */
+/*   Updated: 2022/10/13 23:02:22 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+size_t	strlcat(char *dst, const char *src, size_t size);
 int		ft_isdigit(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
