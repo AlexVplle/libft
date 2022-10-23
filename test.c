@@ -6,10 +6,11 @@
 /*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:26:19 by avapaill          #+#    #+#             */
-/*   Updated: 2022/10/11 23:33:04 by alexvpll         ###   ########.fr       */
+/*   Updated: 2022/10/23 23:31:23 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -26,6 +27,10 @@ int testMemcmp();
 int testStrlcpy();
 int testStrnstr();
 int testAtoi();
+int testStrdup();
+int testCalloc();
+int testSubstr();
+int testStrcpy();
 
 int main (int argc, char *argv[])
 {
@@ -39,7 +44,11 @@ int main (int argc, char *argv[])
 	// testMemcmp();
 	// testStrlcpy();
 	// testStrnstr();
-	testAtoi();
+	// testAtoi();
+	// testStrdup();
+	// testCalloc();
+	// testSubstr();
+	testStrcpy();
     return 0;
 }
 
@@ -92,7 +101,6 @@ int testMemmove() {
 	void *c = malloc(length);
 	if (!c)
 		return (0);
-	char	*array = "";
 	memmove(c, "bonjour", length);
 	// ft_memmove(c, "bonjoujdlkskjdskl", 10);
 	printf("%s\n", (unsigned char *) c);
@@ -146,4 +154,45 @@ int testAtoi()
 {
 	printf("%d\n", ft_atoi(""));
 	return (0);
+}
+
+int testStrdup()
+{
+	printf("%s\n", ft_strdup(""));
+	return 0;
+}
+
+int testCalloc()
+{
+	size_t taille = 4;
+	size_t block = 10;
+	unsigned char *word = (unsigned char*) ft_calloc(taille, block);
+	for (size_t i = 0; i < block * taille; i++)
+	{
+		printf("%d ", word[i]);
+		printf("%lu\n", taille);
+	}
+	return 0;
+}
+
+int testSubstr()
+{
+	const char	*string = "jhkshjfs";
+	printf("%s\n", ft_substr(string, 0, 2));
+	return 0;
+}
+
+int testStrcpy()
+{
+	size_t length = 7;
+	const char *c = malloc(length);
+	// char *d = malloc(length);
+	char *f = malloc(length);
+	c = "coucou";
+	// strlcpy(d, c, 0);
+	ft_strcpy(f, c);
+	// printf("%s\n", d);
+	printf("%s\n", f);
+	return 0;
+	return 0;
 }
