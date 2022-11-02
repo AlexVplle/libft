@@ -13,9 +13,9 @@ OBJS := $(SRCS:$(FILE_EXTENSION)=.o)
 all: $(NAME)
 
 $(NAME) : $(OBJS)
-	# ar rc $(NAME) $(OBJS)
-	# ranlib $(NAME)
-	$(CC) $(CFLAGS) -o main $(OBJS)
+	ar rc $(NAME) $(OBJS)
+	ranlib $(NAME)
+	# $(CC) $(CFLAGS) -o main $(OBJS)
 
 clean:
 	rm -f $(OBJS)
@@ -24,5 +24,9 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+so:
+	$(CC) -fPIC $(CFLAGS) $(SRCS)
+	gcc -shared -o libft.so $(OBJS)
 
 .PHONY: all $(NAME) clean fclean re
