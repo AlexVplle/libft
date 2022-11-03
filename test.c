@@ -6,7 +6,7 @@
 /*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:26:19 by avapaill          #+#    #+#             */
-/*   Updated: 2022/11/03 22:22:20 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/11/03 23:18:07 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int testStrdup();
 int testCalloc();
 int testSubstr();
 int testStrjoin();
+int testStrtrim();
 
 int main (int argc, char *argv[])
 {
@@ -48,7 +49,8 @@ int main (int argc, char *argv[])
 	// testStrdup();
 	// testCalloc();
 	// testSubstr();
-	testStrjoin();
+	// testStrjoin();
+	testStrtrim();
     return 0;
 }
 
@@ -187,5 +189,12 @@ int testStrjoin()
 	char *test = "mmmmmmmmmmmmmmmmmmmmmmmmmmm";
 	char *test2 = "lslllllllllllllllllll";
 	printf("%s\n", ft_strjoin(test, test2));
+	return 0;
+}
+
+int testStrtrim()
+{
+	char *s1 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ";
+	printf("%s", ft_strtrim(s1,  " \n\t"));
 	return 0;
 }
