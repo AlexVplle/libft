@@ -6,7 +6,7 @@
 /*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:26:19 by avapaill          #+#    #+#             */
-/*   Updated: 2022/11/02 23:25:00 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/11/03 22:22:20 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int testAtoi();
 int testStrdup();
 int testCalloc();
 int testSubstr();
+int testStrjoin();
 
 int main (int argc, char *argv[])
 {
@@ -37,7 +38,7 @@ int main (int argc, char *argv[])
 	(void) argv;
 	// testMemset();
 	// testBzero();
-	testMemcpy();
+	// testMemcpy();
 	// testMemmove();
 	// testMemchr();
 	// testMemcmp();
@@ -46,7 +47,8 @@ int main (int argc, char *argv[])
 	// testAtoi();
 	// testStrdup();
 	// testCalloc();
-	testSubstr();
+	// testSubstr();
+	testStrjoin();
     return 0;
 }
 
@@ -175,7 +177,15 @@ int testCalloc()
 
 int testSubstr()
 {
-	// const char	*string = "jhkshjfs";
-	printf("%s\n", ft_substr(NULL, 0, 2));
+	const char	*string = "";
+	printf("%s\n", ft_substr(string, 0, 1));
+	return 0;
+}
+
+int testStrjoin()
+{
+	char *test = "mmmmmmmmmmmmmmmmmmmmmmmmmmm";
+	char *test2 = "lslllllllllllllllllll";
+	printf("%s\n", ft_strjoin(test, test2));
 	return 0;
 }

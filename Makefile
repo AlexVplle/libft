@@ -15,7 +15,6 @@ all: $(NAME)
 $(NAME) : $(OBJS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
-	# $(CC) $(CFLAGS) -o main $(OBJS)
 
 clean:
 	rm -f $(OBJS)
@@ -28,5 +27,8 @@ re: fclean all
 so:
 	$(CC) -fPIC $(CFLAGS) $(SRCS)
 	gcc -shared -o libft.so $(OBJS)
+
+exec: $(OBJS)
+	$(CC) $(CFLAGS) -o main $(OBJS) && ./main
 
 .PHONY: all $(NAME) clean fclean re
