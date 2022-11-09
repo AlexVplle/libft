@@ -6,73 +6,38 @@
 /*   By: avapaill <avapaill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 22:25:03 by avapaill          #+#    #+#             */
-/*   Updated: 2022/11/04 00:06:32 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/11/09 17:58:33 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-static size_t	trim_one_way(char *s1, char const *set, size_t length_set)
+static size_t	is_in_set(char c, char const *set)
 {
-	size_t	continue_trim;
-	size_t	cursor_set;
-	size_t	index;
-
-	continue_trim = 1;
-	index = 0;
-	while (continue_trim)
+	while (*set)
 	{
-		continue_trim = 0;
-		cursor_set = 0;
-		while (cursor_set < length_set)
-		{
-			if (set[cursor_set] == s1[index])
-			{
-				index++;
-				continue_trim = 1;
-			}
-			else
-				cursor_set++;
-		}
+		if (c == *set)
+			return (1);
+		set++;
 	}
-	return (index);
+	return (0);
 }
 
-static char	*reverse_string(char *str)
+static size_t	trim(char const *s1, char const *set, int way, int where_trim)
 {
-	size_t	length_str;
-	size_t	i;
-	char		*reverse_str;
+	while (is_in_set(s1[where_trim], set) && where_trim >= 0)
+		where_trim += way;
+	return (where_trim);
+}
 
-	length_str = ft_strlen(str);
-	reverse_str = malloc((length_str + 1) * sizeof(char));
-	if (!reverse_str)
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	size_t	start;
+	size_t	end;
+
+	if (!s1 || !set)
 		return ((void *) 0);
-	while (i < length_str)
-	{
-		reverse_str[i] = str[length_str - i - 1];
-		i++;
-	}
-	reverse_str[length_str] = '\0';
-	return (reverse_str);
-}
-
-char *ft_strtrim(char const *s1, char const *set)
-{
-	char			*new_s1;
-	size_t		length_set;
-	size_t		length_str;
-	unsigned int	start;
-	size_t		end;
-
-	new_s1 = (char *) s1;
-	length_set = ft_strlen(set);
-	length_str = ft_strlen(s1);
-	start = trim_one_way((char *) s1, set, length_set);
-	(void) start;
-	new_s1 = reverse_string(new_s1);
-	end = trim_one_way(new_s1, set, length_set);
-	return (ft_substr(s1, start, length_str - end - start));
+	start = trim(s1, set, 1, 0);
+	end = trim(s1, set, -1, ft_strlen(s1) - 1);
+	return (ft_substr(s1, start, end - start + 1));
 }

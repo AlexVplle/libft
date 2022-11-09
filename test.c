@@ -6,7 +6,7 @@
 /*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:26:19 by avapaill          #+#    #+#             */
-/*   Updated: 2022/11/03 23:18:07 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/11/09 17:49:07 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int testCalloc();
 int testSubstr();
 int testStrjoin();
 int testStrtrim();
+int testSplit();
 
 int main (int argc, char *argv[])
 {
@@ -50,7 +51,8 @@ int main (int argc, char *argv[])
 	// testCalloc();
 	// testSubstr();
 	// testStrjoin();
-	testStrtrim();
+	// testStrtrim();
+	testSplit();
     return 0;
 }
 
@@ -194,7 +196,19 @@ int testStrjoin()
 
 int testStrtrim()
 {
-	char *s1 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ";
-	printf("%s", ft_strtrim(s1,  " \n\t"));
+	char s1[] = "   \t  \n\n \t\t  \n\n\n\n   \n \n \t\t\n  ";
+	printf("%zu", ft_strlen(ft_strtrim(s1,  " \n\t")));
 	return 0;
+}
+
+int testSplit()
+{
+	char *string = "      split       this for   me  !       ";
+	char **result = ft_split(string, ' ');
+	while (*result)
+	{
+		printf("%s\n", *result);
+		result++;
+	}
+	return 1;
 }

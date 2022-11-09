@@ -6,7 +6,7 @@
 /*   By: avapaill <avapaill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 21:50:48 by avapaill          #+#    #+#             */
-/*   Updated: 2022/11/03 22:10:39 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/11/09 16:26:32 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,14 @@ static char	*ft_strcat(char *dest, const char *src)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
+	char	*dest;
+
 	if (!s1 || !s2)
 		return ((void *) 0);
-	char	*dest = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	dest = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (!dest)
 		return ((void *) 0);
-	*dest = '\0'; 
+	*dest = '\0';
 	dest = ft_strcat(dest, s1);
 	return (ft_strcat(dest, s2));
 }
