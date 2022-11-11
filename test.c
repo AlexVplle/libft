@@ -6,7 +6,7 @@
 /*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:26:19 by avapaill          #+#    #+#             */
-/*   Updated: 2022/11/11 00:17:03 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/11/12 00:11:08 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int testMemmove();
 int testMemchr();
 int testMemcmp();
 int testStrlcpy();
+int testStrlcat();
 int testStrnstr();
 int testAtoi();
 int testStrdup();
@@ -46,6 +47,7 @@ int main (int argc, char *argv[])
 	// testMemchr();
 	// testMemcmp();
 	// testStrlcpy();
+	// testStrlcat();
 	// testStrnstr();
 	// testAtoi();
 	// testStrdup();
@@ -147,6 +149,13 @@ int testStrlcpy()
 	printf("%s\n", d);
 	printf("%s\n", f);
 	return 0;
+}
+
+int testStrlcat()
+{
+	char b[0xF] = "nyan !";
+	ft_strlcat(((void*)0), b, 0);
+	return (1);
 }
 
 int testStrnstr()

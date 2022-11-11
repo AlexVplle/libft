@@ -26,9 +26,9 @@ re: fclean all
 
 so:
 	$(CC) -fPIC $(CFLAGS) $(SRCS)
-	gcc -shared -o libft.so $(OBJS)
+	gcc -shared -o libft.so -lbsd $(OBJS)
 
 exec: $(OBJS)
-	$(CC) $(CFLAGS) -o main $(OBJS) && ./main
+	$(CC) $(CFLAGS) -o main -lbsd $(OBJS) && ./main
 
 .PHONY: all $(NAME) clean fclean re
