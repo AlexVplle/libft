@@ -6,7 +6,7 @@
 /*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:26:19 by avapaill          #+#    #+#             */
-/*   Updated: 2022/11/09 17:49:07 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/11/11 00:17:03 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int testSubstr();
 int testStrjoin();
 int testStrtrim();
 int testSplit();
+int testItoa();
 
 int main (int argc, char *argv[])
 {
@@ -52,7 +53,8 @@ int main (int argc, char *argv[])
 	// testSubstr();
 	// testStrjoin();
 	// testStrtrim();
-	testSplit();
+	// testSplit();
+	// testItoa();
     return 0;
 }
 
@@ -211,4 +213,10 @@ int testSplit()
 		result++;
 	}
 	return 1;
+}
+
+int testItoa()
+{
+	printf("%s", ft_itoa(0));
+	return 0;
 }
