@@ -14,6 +14,9 @@ OBJS_BONUS := $(SRCS_BONUS:$(FILE_EXTENSION)=.o)
 
 all: $(NAME)
 
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 $(NAME) : $(OBJS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
