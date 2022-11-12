@@ -6,12 +6,11 @@
 /*   By: avapaill <avapaill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 18:01:01 by avapaill          #+#    #+#             */
-/*   Updated: 2022/11/10 22:55:05 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/11/12 14:49:55 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 static size_t	length_str(int n)

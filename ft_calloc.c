@@ -6,7 +6,7 @@
 /*   By: avapaill <avapaill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 17:56:09 by avapaill          #+#    #+#             */
-/*   Updated: 2022/10/23 22:11:55 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/11/12 13:19:00 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	unsigned char	*ptr;
 
 	i = 0;
+	if (nmemb > 18446744073709551615UL / size)
+		return ((void *) 0);
 	ptr = (void *) malloc(nmemb * size);
 	if (!ptr)
 		return ((void *) 0);

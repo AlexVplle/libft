@@ -6,7 +6,7 @@
 /*   By: avapaill <avapaill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 23:02:03 by avapaill          #+#    #+#             */
-/*   Updated: 2022/10/13 23:02:03 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/11/12 13:11:36 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,20 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*str;
-	char	*last_character;
+	char			*str;
+	char			*last_character;
+	unsigned char	char_c;
 
 	str = (char *) s;
 	last_character = (void *) 0;
+	char_c = (unsigned char) c;
 	while (*str)
 	{
-		if (*str == c)
+		if (*str == char_c)
 			last_character = str;
 		str++;
 	}
-	if (*str == c)
+	if (*str == char_c)
 		last_character = str;
 	return (last_character);
 }

@@ -6,12 +6,11 @@
 /*   By: avapaill <avapaill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:49:21 by avapaill          #+#    #+#             */
-/*   Updated: 2022/11/12 01:36:41 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/11/12 14:49:39 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 static void	del_linked_list(t_list *current_node, void (*del)(void *))
